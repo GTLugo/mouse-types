@@ -1,4 +1,3 @@
-use dpi::PhysicalPosition;
 #[cfg(feature = "serde")]
 use serde::{
   Deserialize,
@@ -9,6 +8,7 @@ use {
     button::MouseButton,
     state::ButtonState,
   },
+  dpi::PhysicalPosition,
   keyboard_types::Modifiers,
 };
 
