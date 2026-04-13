@@ -1,3 +1,4 @@
+use dpi::PhysicalPosition;
 #[cfg(feature = "serde")]
 use serde::{
   Deserialize,
@@ -15,10 +16,14 @@ use {
 #[derive(Clone, Debug, Eq, Hash, PartialEq, PartialOrd, Ord)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct MouseEvent {
+  /// The position of the mouse cursor.
+  pub position: PhysicalPosition<i32>,
   /// Whether the button is pressed or released.
   pub state: ButtonState,
   /// Logical button value.
   pub button: MouseButton,
   /// Flags for pressed modifier keys.
   pub modifiers: Modifiers,
+  /// Whether this event is a double click.
+  pub is_double_click: bool,
 }
